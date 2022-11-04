@@ -26,9 +26,16 @@ const flex = {
   `,
 };
 
+const mq = {
+  laptop: `@media screen and (min-width: 1024px)`,
+  tablet: `@media screen and (max-width: 1023px)`,
+  mobile: `@media screen and (max-width: 767px)`,
+};
+
 const theme = {
   colors,
   flex,
+  mq,
 };
 
 export default theme;
