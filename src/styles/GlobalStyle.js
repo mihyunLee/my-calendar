@@ -20,7 +20,7 @@ const global = css`
 
   html {
     ${theme.mq?.laptop} {
-      font-size: 14px;
+      font-size: 12px;
     }
     ${theme.mq?.tablet} {
       font-size: 9px;
