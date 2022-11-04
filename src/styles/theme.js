@@ -1,3 +1,5 @@
+import { css } from "@emotion/react";
+
 const colors = {
   WHITE: "#ffffff",
   BLACK: "#000000",
@@ -9,8 +11,24 @@ const colors = {
   SKYBLUE: "#a3dafb",
 };
 
+const flex = {
+  row: css`
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  `,
+  column: css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  `,
+};
+
 const theme = {
   colors,
+  flex,
 };
 
 export default theme;
