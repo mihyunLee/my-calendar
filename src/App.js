@@ -1,5 +1,18 @@
+import { useState } from "react";
+import ToggleButton from "./components/ToggleButton";
+
 function App() {
-  return <div className="App"></div>;
+  const [isToggle, setIsToggle] = useState(false);
+
+  const handleClickToggle = () => {
+    setIsToggle((prev) => !prev);
+  };
+
+  return (
+    <div className="App">
+      <ToggleButton isToggle={isToggle} onClick={handleClickToggle} />
+    </div>
+  );
 }
 
 export default App;

@@ -1,5 +1,4 @@
 import { css } from "@emotion/react";
-import theme from "../../styles/theme";
 
 const button = css`
   border: none;
@@ -8,9 +7,6 @@ const button = css`
 
   cursor: pointer;
 
-  background-color: ${theme.colors.GRAY_100};
-  color: ${theme.colors.BLACK};
-
   &:hover {
     filter: brightness(1.05);
   }
@@ -18,13 +14,13 @@ const button = css`
 
 export default function Button({
   type = "button",
-  css,
+  cssProp,
   onClick,
   children,
   ...props
 }) {
   return (
-    <button type={type} css={[button, css]} onClick={onClick} {...props}>
+    <button type={type} css={[button, cssProp]} onClick={onClick} {...props}>
       {children}
     </button>
   );
