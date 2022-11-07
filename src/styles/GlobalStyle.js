@@ -39,6 +39,10 @@ const global = css`
 
   .App {
     ${theme.flex.column}
+
+    justify-content: space-between;
+
+    height: 100vh;
   }
 `;
 

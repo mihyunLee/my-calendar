@@ -10,6 +10,8 @@ const toggleButton = (isToggle) => css`
   background-color: ${isToggle ? theme.colors.GRAY_500 : theme.colors.GRAY_100};
 
   position: relative;
+
+  margin: 2rem;
 `;
 
 const slider = (isToggle) => css`

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import Calendar from "./components/Calendar";
+import CalendarTemplate from "./components/CalendarTemplate";
 import Footer from "./components/Footer";
 import ToggleButton from "./components/ToggleButton";
 import GlobalStyle from "./styles/GlobalStyle";
@@ -14,6 +16,9 @@ function App() {
     <div className="App">
       <GlobalStyle />
       <ToggleButton isToggle={isToggle} onClick={handleClickToggle} />
+      <CalendarTemplate>
+        <Calendar />
+      </CalendarTemplate>
       <Footer />
     </div>
   );

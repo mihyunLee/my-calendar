@@ -3,7 +3,7 @@ import { css } from "@emotion/react";
 const colors = {
   WHITE: "#ffffff",
   BLACK: "#000000",
-  GRAY_100: "#D0D3D4",
+  GRAY_100: "#E5E7E9",
   GRAY_500: "#383838",
   PINK: "#FF0080",
   ORANGE: "#FF8c00",

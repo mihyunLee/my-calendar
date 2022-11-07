@@ -8,7 +8,7 @@ const button = css`
   cursor: pointer;
 
   &:hover {
-    filter: brightness(1.05);
+    filter: brightness(1.02);
   }
 `;
 
