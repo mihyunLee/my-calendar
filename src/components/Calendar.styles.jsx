@@ -42,7 +42,16 @@ const calendarGrid = css`
 
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 5%;
+  grid-gap: 1%;
 `;
 
-export { calendarHeader, monthBar, navButton, calendarGrid };
+const calendarDays = css`
+  ${theme.flex.row}
+
+  width: 100%;
+  height: 15%;
+
+  background-color: ${theme.colors.GRAY_100};
+`;
+
+export { calendarHeader, monthBar, navButton, calendarGrid, calendarDays };
