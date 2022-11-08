@@ -7,7 +7,7 @@ const calendarTemplate = css`
   text-align: center;
 
   width: 50%;
-  height: 70vh;
+  height: 80vh;
 `;
 
 export default function CalendarTemplate({ children }) {

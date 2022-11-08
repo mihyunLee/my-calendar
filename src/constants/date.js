@@ -1,4 +1,4 @@
-export const days = [
+const days = [
   "일요일",
   "월요일",
   "화요일",
@@ -7,3 +7,5 @@ export const days = [
   "금요일",
   "토요일",
 ];
+
+export { days };

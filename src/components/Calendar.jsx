@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Button from "./common/Button";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 import {
@@ -10,40 +10,55 @@ import {
   calendarDays,
 } from "./Calendar.styles";
 import { addMonths, getMonth, getYear, subMonths } from "date-fns";
-import { days } from "../constants/date.mjs";
+import { days } from "../constants/date.js";
+import { getCalendarDays } from "../utils/date";
+import CalendarDate from "./CalendarDate";
 
 export default function Calendar() {
-  const [date, setDate] = useState(new Date());
+  const [currentDate, setCurrentDate] = useState(new Date());
+  const [calendarDate, setCalendarDate] = useState(
+    getCalendarDays(currentDate)
+  );
 
   const handleClickNextMonth = () => {
-    setDate((prev) => addMonths(prev, 1));
+    setCurrentDate((prev) => addMonths(prev, 1));
   };
 
   const handleClickPrevMonth = () => {
-    setDate((prev) => subMonths(prev, 1));
+    setCurrentDate((prev) => subMonths(prev, 1));
   };
+
+  useEffect(() => {
+    setCalendarDate(getCalendarDays(currentDate));
+  }, [currentDate]);
 
   return (
     <>
       <div css={calendarHeader}>
-        <h1>{getYear(date)}</h1>
+        <h1>{getYear(currentDate)}</h1>
         <div css={monthBar}>
           <Button css={navButton} onClick={handleClickPrevMonth}>
             <MdChevronLeft />
           </Button>
-          <h2>{getMonth(date) + 1}월</h2>
+          <h2>{getMonth(currentDate) + 1}월</h2>
           <Button css={navButton} onClick={handleClickNextMonth}>
             <MdChevronRight />
           </Button>
         </div>
       </div>
-      <div css={calendarGrid}>
+      <div css={calendarDays}>
         {days.map((day, idx) => (
-          <div key={idx} css={calendarDays}>
-            {day}
-          </div>
+          <div key={idx}>{day}</div>
         ))}
-        <div>date</div>
+      </div>
+      <div css={calendarGrid}>
+        {calendarDate.map((date) => (
+          <CalendarDate
+            key={date}
+            date={date}
+            isCurrentMonth={date.getMonth() === currentDate.getMonth()}
+          />
+        ))}
       </div>
     </>
   );

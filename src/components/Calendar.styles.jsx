@@ -35,6 +35,24 @@ const navButton = css`
   font-size: 1.5rem;
 `;
 
+const calendarDays = css`
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1%;
+
+  width: 100%;
+
+  margin-bottom: 0.5rem;
+
+  div {
+    background-color: ${theme.colors.GRAY_100};
+
+    padding: 1rem;
+
+    text-align: center;
+  }
+`;
+
 const calendarGrid = css`
   width: 100%;
 
@@ -43,15 +61,6 @@ const calendarGrid = css`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 1%;
-`;
-
-const calendarDays = css`
-  ${theme.flex.row}
-
-  width: 100%;
-  height: 15%;
-
-  background-color: ${theme.colors.GRAY_100};
 `;
 
 export { calendarHeader, monthBar, navButton, calendarGrid, calendarDays };
