@@ -1,7 +1,15 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import Button from "./common/Button";
+import CalendarDate from "./CalendarDate";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import {
+  addMonths,
+  getMonth,
+  getYear,
+  subMonths,
+  differenceInCalendarDays,
+} from "date-fns";
 import {
   calendarHeader,
   monthBar,
@@ -9,10 +17,8 @@ import {
   calendarGrid,
   calendarDays,
 } from "./Calendar.styles";
-import { addMonths, getMonth, getYear, subMonths } from "date-fns";
 import { days } from "../constants/date.js";
 import { getCalendarDays } from "../utils/date";
-import CalendarDate from "./CalendarDate";
 
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -57,6 +63,7 @@ export default function Calendar() {
             key={date}
             date={date}
             isCurrentMonth={date.getMonth() === currentDate.getMonth()}
+            isToday={differenceInCalendarDays(date, new Date()) === 0}
           />
         ))}
       </div>
