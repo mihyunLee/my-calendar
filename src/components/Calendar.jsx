@@ -36,7 +36,7 @@ export default function Calendar() {
 
   useEffect(() => {
     setCalendarDate(getCalendarDays(currentDate));
-  }, [currentDate]);
+  }, [getMonth(currentDate)]);
 
   return (
     <>
