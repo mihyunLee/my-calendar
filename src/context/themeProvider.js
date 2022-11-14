@@ -11,7 +11,7 @@ const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ mode, setMode }}>
-      <EmotionProvider theme={themeObject}>{children}</EmotionProvider>;
+      <EmotionProvider theme={themeObject}>{children}</EmotionProvider>
     </ThemeContext.Provider>
   );
 };
