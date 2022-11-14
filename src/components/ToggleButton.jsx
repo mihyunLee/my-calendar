@@ -1,20 +1,23 @@
 import { css } from "@emotion/react";
 import Button from "./common/Button";
 import theme from "../styles/theme";
+import { useTheme } from "../context/themeProvider";
 
-const toggleButton = (isToggle) => css`
+const toggleButton = (mode) => css`
   width: 5rem;
   height: 3rem;
   border-radius: 2.5rem;
 
-  background-color: ${isToggle ? theme.colors.GRAY_500 : theme.colors.GRAY_100};
+  background-color: ${mode === "light"
+    ? theme.colors.GRAY_100
+    : theme.colors.GRAY_500};
 
   position: relative;
 
   margin: 2rem;
 `;
 
-const slider = (isToggle) => css`
+const slider = (mode) => css`
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
@@ -32,7 +35,7 @@ const slider = (isToggle) => css`
   transform: translateY(-50%);
   transition: 0.5s;
 
-  ${isToggle &&
+  ${mode === "dark" &&
   `
     left: calc(100% - 2.5rem);
     background: ${theme.colors.GRAY_500};
@@ -41,14 +44,16 @@ const slider = (isToggle) => css`
   `}
 `;
 
-export default function ToggleButton({ isToggle, onClick }) {
+export default function ToggleButton() {
+  const [mode, toggleTheme] = useTheme();
+
   return (
     <Button
-      css={toggleButton(isToggle)}
-      onClick={onClick}
+      css={toggleButton(mode)}
+      onClick={toggleTheme}
       aria-label="주/야간모드 변경"
     >
-      <div css={slider(isToggle)} />
+      <div css={slider(mode)} />
     </Button>
   );
 }

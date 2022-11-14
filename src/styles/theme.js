@@ -32,10 +32,22 @@ const mq = {
   mobile: `@media screen and (max-width: 767px)`,
 };
 
+const mode = {
+  dark: css`
+    color: #ffffff;
+    background-color: #1e1e22;
+  `,
+  light: css`
+    color: #000000;
+    background-color: #ffffff;
+  `,
+};
+
 const theme = {
   colors,
   flex,
   mq,
+  mode,
 };
 
 export default theme;

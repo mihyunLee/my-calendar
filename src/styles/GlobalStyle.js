@@ -2,7 +2,7 @@ import { Global, css } from "@emotion/react";
 import emotionReset from "emotion-reset";
 import theme from "./theme";
 
-const global = css`
+const global = (mode) => css`
   ${emotionReset}
 
   @font-face {
@@ -37,8 +37,9 @@ const global = css`
       "Segoe UI Symbol", sans-serif;
   }
 
-  .App {
+  #root {
     ${theme.flex.column}
+    ${mode}
 
     justify-content: space-between;
 
