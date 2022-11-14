@@ -20,7 +20,7 @@ const monthBar = css`
   margin-top: 1.8rem;
 `;
 
-const navButton = css`
+const navButton = (mode) => css`
   ${theme.flex.row}
 
   width: 2.5rem;
@@ -30,12 +30,13 @@ const navButton = css`
 
   border-radius: 50%;
 
-  background-color: ${theme.colors.GRAY_100};
+  background-color: ${mode.elBgColor};
+  color: ${mode.textColor};
 
   font-size: 1.5rem;
 `;
 
-const calendarDays = css`
+const calendarDays = (mode) => css`
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   grid-gap: 1%;
@@ -45,7 +46,7 @@ const calendarDays = css`
   margin-bottom: 0.5rem;
 
   div {
-    background-color: ${theme.colors.GRAY_100};
+    background-color: ${mode.elBgColor};
 
     padding: 1rem;
 

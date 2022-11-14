@@ -39,7 +39,9 @@ const global = (mode) => css`
 
   #root {
     ${theme.flex.column}
-    ${mode}
+
+    background-color: ${mode.bgColor};
+    color: ${mode.textColor};
 
     justify-content: space-between;
 
