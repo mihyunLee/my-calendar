@@ -28,6 +28,7 @@ yarn start
 - [x] Context API와 Custom hook으로 테마 관리
 - [x] 로컬 스토리지를 사용하여 테마 유지
 
+<br />
 
 ## 🗂️ Project Structure
 ```
