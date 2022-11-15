@@ -6,7 +6,16 @@ const calendarTemplate = css`
 
   text-align: center;
 
-  width: 50%;
+  ${theme.mq?.laptop} {
+    width: 40%;
+  }
+  ${theme.mq?.tablet} {
+    width: 70%;
+  }
+  ${theme.mq?.mobile} {
+    width: 90%;
+  }
+
   height: 80vh;
 `;
 

@@ -28,6 +28,12 @@ const calendarDate = (isToday) => css`
   width: 2rem;
   height: 2rem;
 
+  ${theme.mq?.mobile} {
+    width: 3rem;
+    height: 3rem;
+    margin: 0.3rem;
+  }
+
   border-radius: 50%;
 
   background-color: ${isToday && theme.colors.ORANGE};

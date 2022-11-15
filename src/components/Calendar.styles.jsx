@@ -26,14 +26,17 @@ const navButton = (mode) => css`
   width: 2.5rem;
   height: 2.5rem;
 
+  ${theme.mq?.mobile} {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
   margin: 0 2rem;
 
   border-radius: 50%;
 
   background-color: ${mode.elBgColor};
   color: ${mode.textColor};
-
-  font-size: 1.5rem;
 `;
 
 const calendarDays = (mode) => css`
